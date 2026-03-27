@@ -202,7 +202,7 @@ export default function Home() {
             marginBottom: "16px",
           }}
         >
-          Welcome to The Flanges, your new informational hub dedicated to the
+          Welcome to The Flanges, our flange page dedicated to the
           world of industrial flanges. This site was created to be a clear and
           simple resource for anyone looking to understand the basics of a pipe
           flange, from its different types and materials to its critical role in
@@ -261,52 +261,10 @@ export default function Home() {
         </a>
       </section>
 
-      {/* About The Flanges */}
-      <section
-        id="about"
-        className="rv"
-        style={{
-          padding: "80px 24px",
-          maxWidth: "900px",
-          margin: "0 auto",
-        }}
-      >
-        <h2
-          style={{
-            fontSize: "36px",
-            fontWeight: 700,
-            color: "#1a3a5c",
-            marginBottom: "24px",
-            textAlign: "center",
-          }}
-        >
-          About The Flanges
-        </h2>
-        <p
-          style={{
-            fontSize: "17px",
-            lineHeight: 1.8,
-            color: "#444",
-            textAlign: "center",
-          }}
-        >
-          Welcome to The Flanges, your expert guide for sourcing the right pipe
-          flanges. This site is dedicated to helping you understand the critical
-          specifications, materials (like carbon steel or stainless steel), and
-          pressure ratings you need for your project. We cover all flange types so
-          you can confidently define your requirements and dimensions. When you are
-          ready to buy or request a quote, we recommend contacting the premier
-          flange supplier,{" "}
-          <a
-            href="https://texasflange.com?ref=theflanges"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: "#1a3a5c", fontWeight: 600 }}
-          >
-            Texas Flange
-          </a>
-          , for all standard and custom flanges.
-        </p>
+      {/* Flange Image */}
+      <section className="rv" style={{ padding: "48px 24px", backgroundColor: "#fff", textAlign: "center" }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/the-flanges.jpg" alt="Assorted industrial steel flanges in various sizes" style={{ maxWidth: "500px", width: "100%", borderRadius: "8px", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }} />
       </section>
 
       {/* Our Mission */}
@@ -353,6 +311,77 @@ export default function Home() {
               Texas Flange
             </a>
             .
+          </p>
+        </div>
+      </section>
+
+      {/* Flange Specification Basics */}
+      <section className="rv" style={{ padding: "80px 24px", backgroundColor: "#fff" }}>
+        <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+          <h2 style={{ fontSize: "32px", fontWeight: 700, color: "#1a3a5c", marginBottom: "24px" }}>
+            Flange Specification Basics
+          </h2>
+          <p style={{ fontSize: "17px", lineHeight: 1.8, color: "#444", marginBottom: "24px" }}>
+            There are a few distinct ASME standards that cover different materials and pressure ratings, of which two are the most common:
+          </p>
+
+          <h3 style={{ fontSize: "20px", fontWeight: 700, color: "#1a3a5c", marginBottom: "12px" }}>
+            ASME B16.1 - Cast Iron Flanges
+          </h3>
+          <ul style={{ fontSize: "16px", lineHeight: 1.8, color: "#444", marginBottom: "24px", paddingLeft: "24px" }}>
+            <li>Covers <strong>cast iron</strong> pipe flanges and flanged fittings</li>
+            <li>Used in <strong>lower pressure, lower temperature</strong> applications</li>
+            <li>Pressure classes: 25, 125, and 250</li>
+            <li>Common in older systems, water distribution, and HVAC, and somewhat outdated</li>
+            <li>Generally <strong>less expensive</strong> but more brittle than steel, if available at all</li>
+          </ul>
+
+          <h3 style={{ fontSize: "20px", fontWeight: 700, color: "#1a3a5c", marginBottom: "12px" }}>
+            ASME B16.5 and B16.47 - Steel Pipe Flanges
+          </h3>
+          <ul style={{ fontSize: "16px", lineHeight: 1.8, color: "#444", marginBottom: "32px", paddingLeft: "24px" }}>
+            <li>Covers <strong>carbon steel and alloy steel</strong> pipe flanges and flanged fittings</li>
+            <li>Designed for <strong>higher pressure and higher temperature</strong> service</li>
+            <li>Pressure classes: 150, 300, 400, 600, 900, 1500, and 2500</li>
+            <li>The most widely used flange standard in <strong>oil &amp; gas, petrochemical, and industrial</strong> piping</li>
+            <li>Covers sizes <strong>NPS 1/2 through NPS 24</strong> and <strong>NPS 26 through NPS 60</strong></li>
+          </ul>
+
+          <h3 style={{ fontSize: "22px", fontWeight: 700, color: "#1a3a5c", marginBottom: "16px" }}>
+            The Core Differences
+          </h3>
+          <div style={{ overflowX: "auto", marginBottom: "32px" }}>
+            <table style={{ width: "100%", borderCollapse: "collapse", border: "1px solid #d1d5db", fontSize: "15px" }}>
+              <thead>
+                <tr style={{ background: "#1a3a5c", color: "#fff" }}>
+                  <th style={{ padding: "12px 16px", textAlign: "left", borderRight: "1px solid #d1d5db" }}></th>
+                  <th style={{ padding: "12px 16px", textAlign: "left", borderRight: "1px solid #d1d5db" }}>B16.1</th>
+                  <th style={{ padding: "12px 16px", textAlign: "left" }}>B16.5</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { label: "Material", b1: "Cast Iron", b5: "Steel (carbon & alloy)" },
+                  { label: "Pressure Classes", b1: "25, 125, 250", b5: "150-2500" },
+                  { label: "Typical Use", b1: "Low-pressure utilities", b5: "High-pressure industrial" },
+                  { label: "Temperature Range", b1: "Limited", b5: "Wide range" },
+                  { label: "Durability", b1: "More brittle", b5: "Far stronger" },
+                ].map((row, i) => (
+                  <tr key={i} style={{ background: i % 2 === 0 ? "#f9fafb" : "#fff" }}>
+                    <td style={{ padding: "10px 16px", borderRight: "1px solid #d1d5db", borderBottom: "1px solid #d1d5db", fontWeight: 600, color: "#1a3a5c" }}>{row.label}</td>
+                    <td style={{ padding: "10px 16px", borderRight: "1px solid #d1d5db", borderBottom: "1px solid #d1d5db", color: "#444" }}>{row.b1}</td>
+                    <td style={{ padding: "10px 16px", borderBottom: "1px solid #d1d5db", color: "#444" }}>{row.b5}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p style={{ fontSize: "17px", lineHeight: 1.8, color: "#444", marginBottom: "12px" }}>
+            If you're working in oil &amp; gas, refineries, or any demanding industrial environment, B16.5 is almost always the standard you're dealing with.
+          </p>
+          <p style={{ fontSize: "17px", lineHeight: 1.8, color: "#444" }}>
+            B16.1 shows up more in older infrastructure and lower-stakes utility systems, and even within those systems, upgrades and repairs are typically done with the modern ASME B16.5 and B16.9 specification to call out new products.
           </p>
         </div>
       </section>
